@@ -1,6 +1,7 @@
 from weather_api import get_weather
 from weather_api import forecast
 from weather_api import astronomical
+from weather_api import weather_location
 from datetime import datetime
 
 #current time in hours and minutes using the 12-hour clock format
@@ -18,7 +19,9 @@ while True:
     city_name = weather["location"]["name"]
     region_name = weather["location"]["region"]
 
-    print("The city you entered is: ", {city_name}, {region_name}, ".")
+    location_obj = weather_location(city_name, region_name)
+
+    print("The city you entered is: ", location_obj.full_location())
     confirm = input("Is this correct? (yes/no): ")
     if confirm == "yes":
         break

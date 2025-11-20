@@ -43,3 +43,11 @@ def astronomical(city):
        return data
     except requests.exceptions.RequestException:
         return {"error": "Network error while getting weather."}
+
+class weather_location:
+    def __init__(self, city_name, region_name):
+        self.city = city_name
+        self.region = region_name
+
+    def full_location(self):
+        return f"{self.city}, {self.region}"
