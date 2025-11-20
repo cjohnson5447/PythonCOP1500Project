@@ -77,7 +77,7 @@ while True:
                 print("The current time is: ", current_time)
                 if current_time > sunset:
                     print("The arena lights are on. They turned on at: ", sunset)
-                elif current_time < sunrise:
+                elif current_time < sunset:
                     print("The arena lights are off. They turned off at: ", sunrise)
 
                 return "Thanks for checking in!"
